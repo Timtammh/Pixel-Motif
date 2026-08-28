@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(node check.mjs)",
+      "Bash(node debug.mjs)",
+      "Bash(node scroll-check.mjs)",
+      "Bash(node zoom.mjs)",
+      "Bash(node mobile-scroll.mjs)",
+      "Bash(node mobile-zoom.mjs)",
+      "Bash(npm install *)"
+    ]
+  }
+}
