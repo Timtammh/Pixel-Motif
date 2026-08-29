@@ -9,7 +9,7 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 lg:py-32 xl:py-36 2xl:py-25">
+    <section id="process" className="py-24 lg:py-32 xl:py-36 2xl:py-40">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10 xl:max-w-[1280px] xl:px-14 2xl:max-w-[1440px] 2xl:px-16">
         <Reveal className="max-w-2xl xl:max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.16em] text-accent xl:text-base">Process</p>

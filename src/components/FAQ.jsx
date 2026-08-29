@@ -71,7 +71,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
-    <section id="faq" className="py-24 lg:py-32 xl:py-36 2xl:py-25">
+    <section id="faq" className="py-24 lg:py-32 xl:py-36 2xl:py-40">
       <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10 xl:max-w-5xl xl:px-14">
         <Reveal className="max-w-2xl">
           <p className="text-sm font-medium uppercase tracking-[0.16em] text-accent xl:text-base">FAQ</p>

@@ -59,8 +59,8 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-ink xl:text-[15px] ${
-                  activeHref === link.href ? 'text-ink' : 'text-ink-soft'
+                className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-ink after:transition-all after:duration-300 hover:text-ink hover:after:w-full xl:text-[15px] ${
+                  activeHref === link.href ? 'text-ink after:w-full' : 'text-ink-soft'
                 }`}
               >
                 {link.label}

@@ -1,17 +1,14 @@
+import evProject from '../assets/ev-project.jpg'
 import BrowserFrame from './BrowserFrame.jsx'
 import Reveal from './Reveal.jsx'
 import { QUOTE_ANCHOR } from '../siteConfig.js'
 
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 xl:pt-28 xl:pb-36 2xl:pt-32 2xl:pb-25"
-    >
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[560px] bg-[radial-gradient(60%_50%_at_50%_0%,var(--color-accent-light),transparent)]" />
-
-      <div className="mx-auto grid max-w-6xl gap-16 px-6 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-12 lg:px-10 xl:max-w-[1280px] xl:gap-16 xl:px-14 2xl:max-w-[1440px] 2xl:gap-20 2xl:px-16">
+    <section id="top" className="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 xl:pt-28 xl:pb-36 2xl:pt-32 2xl:pb-40">
+      <div className="mx-auto grid max-w-6xl gap-16 px-6 sm:px-8 lg:grid-cols-[1fr_0.95fr] lg:items-start lg:gap-12 lg:px-10 xl:max-w-[1280px] xl:gap-16 xl:px-14 2xl:max-w-[1440px] 2xl:gap-20 2xl:px-16">
         <Reveal>
+          <span className="mb-6 inline-block h-px w-10 bg-accent" aria-hidden="true" />
           <p className="mb-5 text-sm font-medium uppercase tracking-[0.16em] text-accent xl:text-base">
             Web Design &amp; Development Studio
           </p>
@@ -38,52 +35,59 @@ export default function Hero() {
             </a>
           </div>
 
-          <p className="mt-10 text-sm font-medium tracking-wide text-ink-soft xl:mt-12 xl:text-base">
-            Web Design <span className="mx-2 text-line">·</span> Development
-            <span className="mx-2 text-line">·</span> Responsive
-            <span className="mx-2 text-line">·</span> SEO Ready
-          </p>
+          <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line pt-6 text-xs font-medium uppercase tracking-[0.14em] text-ink-soft xl:mt-14 xl:pt-7 xl:text-sm">
+            <span>Web Design</span>
+            <span>Development</span>
+            <span>Responsive</span>
+            <span>SEO Ready</span>
+          </div>
         </Reveal>
 
-        <Reveal delay={2} className="relative">
-          <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] border border-line/70 lg:-inset-8 xl:-inset-10" />
-          <BrowserFrame url="yourbusiness.hk">
-            <div className="bg-white">
-              <div className="flex items-center justify-between px-5 py-4 xl:px-7 xl:py-5">
-                <div className="flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-accent xl:h-2.5 xl:w-2.5" />
-                  <span className="text-[13px] font-semibold text-ink xl:text-[15px]">Ember &amp; Co.</span>
-                </div>
-                <div className="hidden gap-4 text-[11px] text-ink-soft sm:flex xl:text-[13px]">
-                  <span>Menu</span>
-                  <span>About</span>
-                  <span>Contact</span>
-                </div>
-                <span className="rounded-full bg-ink px-3 py-1.5 text-[10px] font-medium text-paper xl:px-4 xl:py-2 xl:text-xs">
-                  Book a Table
-                </span>
+        <Reveal variant="image" delay={2} className="lg:mt-14 xl:mt-16">
+          <a
+            href="#work"
+            className="group block"
+            aria-label="View the EV Service & Charging Platform case study"
+          >
+            <BrowserFrame url="evproject-two.vercel.app">
+              <div className="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src={evProject}
+                  alt="Homepage preview of the EV Service and Charging Platform, showing a full-bleed automotive hero image with a minimal navigation bar"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                  width="1400"
+                  height="900"
+                />
               </div>
-
-              <div className="mx-5 mb-5 rounded-lg bg-[linear-gradient(135deg,#12715a_0%,#0c0c0d_100%)] px-6 py-10 xl:mx-7 xl:mb-7 xl:px-8 xl:py-14">
-                <p className="max-w-[220px] font-display text-xl font-medium leading-snug text-white xl:max-w-[280px] xl:text-2xl">
-                  Seasonal dining in the heart of the city
+            </BrowserFrame>
+            <div className="mt-4 flex items-baseline justify-between gap-4">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-ink-soft">Featured Project</p>
+                <p className="mt-1 font-display text-base font-medium text-ink xl:text-lg">
+                  EV Service &amp; Charging Platform
                 </p>
-                <span className="mt-4 inline-block rounded-full bg-white/15 px-3 py-1.5 text-[10px] font-medium text-white xl:mt-5 xl:px-4 xl:py-2 xl:text-xs">
-                  Reserve Now
-                </span>
               </div>
-
-              <div className="grid grid-cols-3 gap-3 px-5 pb-6 xl:gap-4 xl:px-7 xl:pb-8">
-                {['Reservations', 'Our Menu', 'Find Us'].map((label) => (
-                  <div key={label} className="rounded-md border border-line p-3 xl:p-4">
-                    <span className="mb-2 block h-1.5 w-5 rounded-full bg-accent" />
-                    <span className="block text-[10px] font-medium text-ink xl:text-xs">{label}</span>
-                    <span className="mt-1 block h-1 w-full rounded-full bg-paper-dim" />
-                  </div>
-                ))}
-              </div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-ink-soft transition-colors group-hover:text-ink xl:text-sm">
+                View case study
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="transition-transform duration-300 group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M7 17 17 7M9 7h8v8"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
             </div>
-          </BrowserFrame>
+          </a>
         </Reveal>
       </div>
     </section>

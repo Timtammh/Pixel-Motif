@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-export default function Reveal({ children, className = '', as: Tag = 'div', delay = 0 }) {
+export default function Reveal({ children, className = '', as: Tag = 'div', delay = 0, variant = 'rise' }) {
   const ref = useRef(null)
   const [visible, setVisible] = useState(false)
 
@@ -23,6 +23,14 @@ export default function Reveal({ children, className = '', as: Tag = 'div', dela
   }, [])
 
   const delayClass = delay ? `reveal-delay-${delay}` : ''
+
+  if (variant === 'image') {
+    return (
+      <Tag ref={ref} className={`reveal-image ${delayClass} ${visible ? 'is-visible' : ''} ${className}`}>
+        <div className="reveal-image-inner">{children}</div>
+      </Tag>
+    )
+  }
 
   return (
     <Tag ref={ref} className={`reveal ${delayClass} ${visible ? 'is-visible' : ''} ${className}`}>

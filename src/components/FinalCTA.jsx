@@ -4,7 +4,7 @@ import { WHATSAPP_URL } from '../siteConfig.js'
 
 export default function FinalCTA() {
   return (
-    <section id="contact" className="py-24 lg:py-32 xl:py-36 2xl:py-25">
+    <section id="contact" className="py-24 lg:py-32 xl:py-36 2xl:py-40">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10 xl:max-w-[1280px] xl:px-14 2xl:max-w-[1440px] 2xl:px-16">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16 xl:gap-24">
           <Reveal>
