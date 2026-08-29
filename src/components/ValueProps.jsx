@@ -43,25 +43,25 @@ const VALUES = [
 
 export default function ValueProps() {
   return (
-    <section className="border-y border-line bg-ink py-24 text-paper lg:py-32">
-      <div className="mx-auto max-w-6xl px-6 lg:px-10">
-        <Reveal className="max-w-xl">
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-accent">Why Pixel Motif</p>
-          <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">
+    <section className="border-y border-line bg-ink py-24 text-paper lg:py-32 xl:py-36 2xl:py-25">
+      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10 xl:max-w-[1280px] xl:px-14 2xl:max-w-[1440px] 2xl:px-16">
+        <Reveal className="max-w-xl xl:max-w-2xl">
+          <p className="text-sm font-medium uppercase tracking-[0.16em] text-accent xl:text-base">Why Pixel Motif</p>
+          <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl xl:text-5xl">
             More Than Just a Website.
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:mt-16 xl:gap-10">
           {VALUES.map((value, index) => (
             <Reveal key={value.title} delay={Math.min(index + 1, 3)}>
-              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-accent">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-accent xl:h-12 xl:w-12">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   {value.icon}
                 </svg>
               </div>
-              <h3 className="mt-5 font-display text-lg font-medium">{value.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-paper/65">{value.description}</p>
+              <h3 className="mt-5 font-display text-lg font-medium xl:text-xl">{value.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-paper/65 xl:text-base">{value.description}</p>
             </Reveal>
           ))}
         </div>

@@ -8,7 +8,9 @@
       "Bash(node zoom.mjs)",
       "Bash(node mobile-scroll.mjs)",
       "Bash(node mobile-zoom.mjs)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(node large-check.mjs)",
+      "Bash(node large-sections.mjs)"
     ]
   }
 }

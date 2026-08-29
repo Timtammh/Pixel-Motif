@@ -3,14 +3,14 @@ export default function BrowserFrame({ url = 'yourbusiness.com', children, class
     <div
       className={`overflow-hidden rounded-xl border border-line bg-white shadow-[0_30px_80px_-24px_rgba(12,12,13,0.35)] ${className}`}
     >
-      <div className="flex items-center gap-3 border-b border-line bg-paper-dim px-4 py-3">
+      <div className="flex items-center gap-3 border-b border-line bg-paper-dim px-4 py-3 xl:px-5 xl:py-3.5">
         <div className="flex gap-1.5" aria-hidden="true">
-          <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
-          <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
-          <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
+          <span className="h-2.5 w-2.5 rounded-full bg-ink/15 xl:h-3 xl:w-3" />
+          <span className="h-2.5 w-2.5 rounded-full bg-ink/15 xl:h-3 xl:w-3" />
+          <span className="h-2.5 w-2.5 rounded-full bg-ink/15 xl:h-3 xl:w-3" />
         </div>
         <div className="flex flex-1 items-center justify-center">
-          <div className="flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1 text-xs text-ink-soft">
+          <div className="flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1 text-xs text-ink-soft xl:px-3.5 xl:py-1.5 xl:text-sm">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
               <path
                 d="M5 1v2M5 7v2M1 5h2M7 5h2M2.5 2.5l1.4 1.4M6.1 6.1l1.4 1.4M2.5 7.5l1.4-1.4M6.1 3.9l1.4-1.4"

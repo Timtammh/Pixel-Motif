@@ -7,7 +7,7 @@ export default function Logo({ className = '' }) {
         <span className="h-[7px] w-[7px] bg-accent" />
         <span className="h-[7px] w-[7px] bg-ink" />
       </span>
-      <span className="font-display text-lg font-medium tracking-tight text-ink">Pixel Motif</span>
+      <span className="font-display text-lg font-medium tracking-tight text-ink xl:text-xl">Pixel Motif</span>
     </span>
   )
 }

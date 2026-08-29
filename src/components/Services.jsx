@@ -66,30 +66,30 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-6 lg:px-10">
-        <Reveal className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-accent">Services</p>
-          <h2 className="mt-3 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl">
+    <section id="services" className="py-24 lg:py-32 xl:py-36 2xl:py-25">
+      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10 xl:max-w-[1280px] xl:px-14 2xl:max-w-[1440px] 2xl:px-16">
+        <Reveal className="max-w-2xl xl:max-w-3xl">
+          <p className="text-sm font-medium uppercase tracking-[0.16em] text-accent xl:text-base">Services</p>
+          <h2 className="mt-3 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl xl:text-5xl">
             Everything You Need to Build a Better Online Presence.
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-3 xl:mt-16 xl:gap-8">
           {SERVICES.map((service, index) => (
             <Reveal
               key={service.title}
               delay={Math.min(index + 1, 3)}
-              className="group flex flex-col rounded-2xl border border-line bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_-24px_rgba(12,12,13,0.25)]"
+              className="group flex flex-col rounded-2xl border border-line bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_-24px_rgba(12,12,13,0.25)] xl:p-9"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-light text-accent-dark">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-light text-accent-dark xl:h-12 xl:w-12">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   {service.icon}
                 </svg>
               </div>
-              <h3 className="mt-6 font-display text-xl font-medium text-ink">{service.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{service.description}</p>
-              <ul className="mt-6 space-y-2.5 border-t border-line pt-6 text-sm text-ink-soft">
+              <h3 className="mt-6 font-display text-xl font-medium text-ink xl:text-2xl">{service.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft xl:text-base">{service.description}</p>
+              <ul className="mt-6 space-y-2.5 border-t border-line pt-6 text-sm text-ink-soft xl:space-y-3 xl:text-base">
                 {service.items.map((item) => (
                   <li key={item} className="flex items-center gap-2.5">
                     <span className="h-1 w-1 shrink-0 rounded-full bg-accent" aria-hidden="true" />

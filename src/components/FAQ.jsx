@@ -38,9 +38,9 @@ function FAQItem({ item, isOpen, onToggle, id }) {
           onClick={onToggle}
           className="flex w-full items-center justify-between gap-6 py-6 text-left"
         >
-          <span className="font-display text-lg font-medium text-ink">{item.question}</span>
+          <span className="font-display text-lg font-medium text-ink xl:text-xl">{item.question}</span>
           <span
-            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-transform duration-300 ${
+            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-transform duration-300 xl:h-9 xl:w-9 ${
               isOpen ? 'rotate-45 border-accent text-accent' : ''
             }`}
             aria-hidden="true"
@@ -60,7 +60,7 @@ function FAQItem({ item, isOpen, onToggle, id }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="max-w-2xl pb-6 text-sm leading-relaxed text-ink-soft">{item.answer}</p>
+          <p className="max-w-2xl pb-6 text-sm leading-relaxed text-ink-soft xl:text-base">{item.answer}</p>
         </div>
       </div>
     </div>
@@ -71,16 +71,16 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
-    <section id="faq" className="py-24 lg:py-32">
-      <div className="mx-auto max-w-4xl px-6 lg:px-10">
+    <section id="faq" className="py-24 lg:py-32 xl:py-36 2xl:py-25">
+      <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10 xl:max-w-5xl xl:px-14">
         <Reveal className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-accent">FAQ</p>
-          <h2 className="mt-3 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl">
+          <p className="text-sm font-medium uppercase tracking-[0.16em] text-accent xl:text-base">FAQ</p>
+          <h2 className="mt-3 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl xl:text-5xl">
             Common Questions.
           </h2>
         </Reveal>
 
-        <Reveal delay={2} className="mt-12 border-t border-line">
+        <Reveal delay={2} className="mt-12 border-t border-line xl:mt-16">
           {FAQS.map((item, index) => (
             <FAQItem
               key={item.question}

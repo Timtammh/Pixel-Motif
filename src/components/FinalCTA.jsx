@@ -4,14 +4,14 @@ import { WHATSAPP_URL } from '../siteConfig.js'
 
 export default function FinalCTA() {
   return (
-    <section id="contact" className="py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-6 lg:px-10">
-        <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16">
+    <section id="contact" className="py-24 lg:py-32 xl:py-36 2xl:py-25">
+      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10 xl:max-w-[1280px] xl:px-14 2xl:max-w-[1440px] 2xl:px-16">
+        <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16 xl:gap-24">
           <Reveal>
-            <h2 className="font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl">
+            <h2 className="font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl xl:text-5xl">
               Ready to Build a Better Website?
             </h2>
-            <p className="mt-4 max-w-md text-base leading-relaxed text-ink-soft">
+            <p className="mt-4 max-w-md text-base leading-relaxed text-ink-soft xl:max-w-lg xl:text-lg">
               Tell us what you need. We&apos;ll review your project and provide a clear quotation.
             </p>
 
@@ -19,7 +19,7 @@ export default function FinalCTA() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2.5 rounded-full border border-line px-6 py-3.5 text-sm font-medium text-ink transition-colors hover:border-ink"
+              className="mt-8 inline-flex items-center gap-2.5 rounded-full border border-line px-6 py-3.5 text-sm font-medium text-ink transition-colors hover:border-ink xl:px-7 xl:py-4 xl:text-base"
             >
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path

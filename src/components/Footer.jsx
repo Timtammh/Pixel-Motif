@@ -9,11 +9,11 @@ const SOCIALS = [
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-paper-dim">
-      <div className="mx-auto max-w-6xl px-6 py-14 lg:px-10">
+      <div className="mx-auto max-w-6xl px-6 py-14 sm:px-8 lg:px-10 xl:max-w-[1280px] xl:px-14 xl:py-16 2xl:max-w-[1440px] 2xl:px-16">
         <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
           <div className="max-w-xs">
             <Logo />
-            <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+            <p className="mt-4 text-sm leading-relaxed text-ink-soft xl:text-base">
               Web design and development for modern small businesses.
             </p>
           </div>
@@ -22,7 +22,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5 sm:items-end">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-sm text-ink-soft transition-colors hover:text-ink">
+                  <a href={link.href} className="text-sm text-ink-soft transition-colors hover:text-ink xl:text-base">
                     {link.label}
                   </a>
                 </li>

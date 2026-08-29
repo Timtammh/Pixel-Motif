@@ -46,17 +46,20 @@ export default function Navbar() {
         scrolled ? 'border-line bg-paper/90 backdrop-blur-md' : 'border-transparent bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-10" aria-label="Primary">
+      <nav
+        className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8 lg:px-10 lg:py-5 xl:max-w-[1280px] xl:px-14 2xl:max-w-[1440px] 2xl:px-16"
+        aria-label="Primary"
+      >
         <a href="#top" className="shrink-0">
           <Logo />
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-8 md:flex xl:gap-10">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-ink ${
+                className={`text-sm font-medium transition-colors hover:text-ink xl:text-[15px] ${
                   activeHref === link.href ? 'text-ink' : 'text-ink-soft'
                 }`}
               >
@@ -68,7 +71,7 @@ export default function Navbar() {
 
         <a
           href={QUOTE_ANCHOR}
-          className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-accent-dark md:inline-flex"
+          className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-accent-dark md:inline-flex xl:px-6 xl:py-3 xl:text-[15px]"
         >
           Get a Free Quote
         </a>
