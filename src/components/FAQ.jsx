@@ -1,30 +1,7 @@
 import { useState } from 'react'
 import Reveal from './Reveal.jsx'
-
-const FAQS = [
-  {
-    question: 'How long does a website take?',
-    answer:
-      'Most standard websites can be completed within 5–7 working days depending on scope and content.',
-  },
-  {
-    question: 'Do I need to provide the content?',
-    answer:
-      'Clients can provide their own content, or we can discuss AI-assisted content preparation.',
-  },
-  {
-    question: 'Can you redesign my existing website?',
-    answer: 'Yes. Existing websites can be redesigned and modernised while improving mobile usability.',
-  },
-  {
-    question: 'Can you help with domain and hosting?',
-    answer: 'Yes. Deployment and basic setup can be included depending on the project.',
-  },
-  {
-    question: 'Do you provide ongoing maintenance?',
-    answer: 'Yes. Monthly website maintenance is available from HK$500/month.',
-  },
-]
+import { useLanguage } from '../i18n/LanguageContext.jsx'
+import { EYEBROW_CLASS, H2_CLASS } from '../i18n/typography.js'
 
 function FAQItem({ item, isOpen, onToggle, id }) {
   return (
@@ -68,20 +45,21 @@ function FAQItem({ item, isOpen, onToggle, id }) {
 }
 
 export default function FAQ() {
+  const { lang, t } = useLanguage()
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
     <section id="faq" className="py-24 lg:py-32 xl:py-36 2xl:py-40">
       <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10 xl:max-w-5xl xl:px-14">
         <Reveal className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-accent xl:text-base">FAQ</p>
-          <h2 className="mt-3 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl xl:text-5xl">
-            Common Questions.
-          </h2>
+          <p className={`text-sm font-medium uppercase text-accent xl:text-base ${EYEBROW_CLASS[lang]}`}>
+            {t.faq.eyebrow}
+          </p>
+          <h2 className={`mt-3 font-display font-medium text-ink ${H2_CLASS[lang]}`}>{t.faq.heading}</h2>
         </Reveal>
 
         <Reveal delay={2} className="mt-12 border-t border-line xl:mt-16">
-          {FAQS.map((item, index) => (
+          {t.faq.items.map((item, index) => (
             <FAQItem
               key={item.question}
               id={`faq-${index}`}

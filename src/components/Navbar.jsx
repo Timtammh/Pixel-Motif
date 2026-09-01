@@ -1,8 +1,36 @@
 import { useEffect, useState } from 'react'
 import Logo from './Logo.jsx'
-import { NAV_LINKS, QUOTE_ANCHOR } from '../siteConfig.js'
+import { QUOTE_ANCHOR } from '../siteConfig.js'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
+
+function LanguageSwitcher({ lang, setLang, className = '' }) {
+  return (
+    <div className={`flex items-center gap-1.5 text-sm font-medium ${className}`}>
+      <button
+        type="button"
+        onClick={() => setLang('zh-HK')}
+        aria-pressed={lang === 'zh-HK'}
+        className={`transition-colors ${lang === 'zh-HK' ? 'text-ink' : 'text-ink-soft hover:text-ink'}`}
+      >
+        繁中
+      </button>
+      <span className="text-line" aria-hidden="true">
+        |
+      </span>
+      <button
+        type="button"
+        onClick={() => setLang('en')}
+        aria-pressed={lang === 'en'}
+        className={`transition-colors ${lang === 'en' ? 'text-ink' : 'text-ink-soft hover:text-ink'}`}
+      >
+        EN
+      </button>
+    </div>
+  )
+}
 
 export default function Navbar() {
+  const { lang, setLang, t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeHref, setActiveHref] = useState('')
@@ -15,7 +43,7 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    const sections = NAV_LINKS.map((link) => document.querySelector(link.href)).filter(Boolean)
+    const sections = t.nav.links.map((link) => document.querySelector(link.href)).filter(Boolean)
     if (sections.length === 0) return undefined
 
     const observer = new IntersectionObserver(
@@ -31,7 +59,7 @@ export default function Navbar() {
 
     sections.forEach((section) => observer.observe(section))
     return () => observer.disconnect()
-  }, [])
+  }, [t.nav.links])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -55,7 +83,7 @@ export default function Navbar() {
         </a>
 
         <ul className="hidden items-center gap-8 md:flex xl:gap-10">
-          {NAV_LINKS.map((link) => (
+          {t.nav.links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
@@ -69,34 +97,40 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a
-          href={QUOTE_ANCHOR}
-          className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-accent-dark md:inline-flex xl:px-6 xl:py-3 xl:text-[15px]"
-        >
-          Get a Free Quote
-        </a>
+        <div className="hidden items-center gap-5 md:flex xl:gap-6">
+          <LanguageSwitcher lang={lang} setLang={setLang} />
+          <a
+            href={QUOTE_ANCHOR}
+            className="inline-flex rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-accent-dark xl:px-6 xl:py-3 xl:text-[15px]"
+          >
+            {t.nav.cta}
+          </a>
+        </div>
 
-        <button
-          type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink md:hidden"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span className="relative block h-3 w-4" aria-hidden="true">
-            <span
-              className={`absolute left-0 top-0 h-[1.5px] w-4 bg-current transition-transform duration-200 ${
-                menuOpen ? 'translate-y-[5px] rotate-45' : ''
-              }`}
-            />
-            <span
-              className={`absolute left-0 bottom-0 h-[1.5px] w-4 bg-current transition-transform duration-200 ${
-                menuOpen ? '-translate-y-[5px] -rotate-45' : ''
-              }`}
-            />
-          </span>
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <LanguageSwitcher lang={lang} setLang={setLang} />
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className="relative block h-3 w-4" aria-hidden="true">
+              <span
+                className={`absolute left-0 top-0 h-[1.5px] w-4 bg-current transition-transform duration-200 ${
+                  menuOpen ? 'translate-y-[5px] rotate-45' : ''
+                }`}
+              />
+              <span
+                className={`absolute left-0 bottom-0 h-[1.5px] w-4 bg-current transition-transform duration-200 ${
+                  menuOpen ? '-translate-y-[5px] -rotate-45' : ''
+                }`}
+              />
+            </span>
+          </button>
+        </div>
       </nav>
 
       <div
@@ -106,7 +140,7 @@ export default function Navbar() {
         }`}
       >
         <ul className="flex flex-col gap-1 px-6 py-4">
-          {NAV_LINKS.map((link) => (
+          {t.nav.links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
@@ -123,7 +157,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="block rounded-full bg-ink px-5 py-3 text-center text-sm font-medium text-paper"
             >
-              Get a Free Quote
+              {t.nav.cta}
             </a>
           </li>
         </ul>

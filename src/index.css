@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Noto+Sans+HK:wght@400;500;600;700&family=Noto+Serif+HK:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", "Noto Serif HK", ui-serif, Georgia, serif;
+  --font-sans: "Inter", "Noto Sans HK", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --color-ink: #0c0c0d;
   --color-ink-soft: #4a4a4c;
@@ -44,7 +44,7 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
+} 
 
 @keyframes rise {
   from {
@@ -109,4 +109,29 @@ body {
 }
 .reveal-image.reveal-delay-3.is-visible .reveal-image-inner {
   animation-delay: 0.24s;
+}
+
+/*
+ * Traditional Chinese glyphs are denser than Latin letters, so headings
+ * need more line-height and no negative tracking (tracking-tight is a
+ * Latin display-type convention that crowds CJK characters).
+ */
+:lang(zh-HK) {
+  line-height: 1.75;
+}
+
+:lang(zh-HK) h1,
+:lang(zh-HK) h2,
+:lang(zh-HK) h3,
+:lang(zh-HK) h4 {
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+:lang(zh-HK) .tracking-\[0\.16em\] {
+  letter-spacing: 0.04em;
+}
+
+:lang(zh-HK) .tracking-\[0\.14em\] {
+  letter-spacing: 0.03em;
 }

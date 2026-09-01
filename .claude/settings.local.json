@@ -10,7 +10,16 @@
       "Bash(node mobile-zoom.mjs)",
       "Bash(npm install *)",
       "Bash(node large-check.mjs)",
-      "Bash(node large-sections.mjs)"
+      "Bash(node large-sections.mjs)",
+      "Bash(node lang-check.mjs)",
+      "Bash(node zh-full.mjs)",
+      "Bash(node zh-zoom.mjs)",
+      "Bash(node zh-work.mjs)",
+      "Bash(node zh-mobile.mjs)",
+      "Bash(node en-regress.mjs)",
+      "Bash(node axe.mjs)",
+      "Bash(sed 's#localhost:5173/#localhost:5173/?lang=zh-hk#' axe.mjs)",
+      "Bash(node axe-zh.mjs)"
     ]
   }
 }

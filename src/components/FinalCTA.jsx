@@ -1,18 +1,20 @@
 import Reveal from './Reveal.jsx'
 import QuoteForm from './QuoteForm.jsx'
 import { WHATSAPP_URL } from '../siteConfig.js'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
+import { H2_CLASS } from '../i18n/typography.js'
 
 export default function FinalCTA() {
+  const { lang, t } = useLanguage()
+
   return (
     <section id="contact" className="py-24 lg:py-32 xl:py-36 2xl:py-40">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10 xl:max-w-[1280px] xl:px-14 2xl:max-w-[1440px] 2xl:px-16">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16 xl:gap-24">
           <Reveal>
-            <h2 className="font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl xl:text-5xl">
-              Ready to Build a Better Website?
-            </h2>
+            <h2 className={`font-display font-medium text-ink ${H2_CLASS[lang]}`}>{t.finalCta.heading}</h2>
             <p className="mt-4 max-w-md text-base leading-relaxed text-ink-soft xl:max-w-lg xl:text-lg">
-              Tell us what you need. We&apos;ll review your project and provide a clear quotation.
+              {t.finalCta.subhead}
             </p>
 
             <a
@@ -33,11 +35,9 @@ export default function FinalCTA() {
                   fill="currentColor"
                 />
               </svg>
-              WhatsApp Us
+              {t.finalCta.whatsapp}
             </a>
-            <p className="mt-2 text-xs text-ink-soft">
-              WhatsApp link is a placeholder — replace with your business number.
-            </p>
+            <p className="mt-2 text-xs text-ink-soft">{t.finalCta.whatsappNote}</p>
           </Reveal>
 
           <Reveal delay={2}>
