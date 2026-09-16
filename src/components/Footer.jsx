@@ -2,8 +2,8 @@ import Logo from './Logo.jsx'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 const SOCIALS = [
-  { label: 'Instagram', href: '#' },
-  { label: 'LinkedIn', href: '#' },
+  // { label: 'Instagram', href: '#' },
+  // { label: 'LinkedIn', href: '#' },
 ]
 
 export default function Footer() {

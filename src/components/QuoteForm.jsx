@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 const inputClasses =
@@ -6,35 +5,16 @@ const inputClasses =
 
 export default function QuoteForm() {
   const { t } = useLanguage()
-  const [submitted, setSubmitted] = useState(false)
-
-  // TODO: wire this up to a real backend or email service (e.g. Formspree,
-  // EmailJS, or a mailto: link with your real address) before launch.
-  function handleSubmit(event) {
-    event.preventDefault()
-    setSubmitted(true)
-  }
-
-  if (submitted) {
-    return (
-      <div className="rounded-2xl border border-line bg-white p-8 text-center sm:p-10 xl:p-12" role="status">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent-light text-accent-dark xl:h-14 xl:w-14">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </div>
-        <h3 className="mt-5 font-display text-xl font-medium text-ink xl:text-2xl">{t.quoteForm.successTitle}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-ink-soft xl:text-base">{t.quoteForm.successBody}</p>
-      </div>
-    )
-  }
-
   return (
     <form
-      onSubmit={handleSubmit}
+      action="https://formsubmit.co/motifphco@gmail.com"
+      method="post"
       className="rounded-2xl border border-line bg-white p-8 sm:p-10 xl:p-12"
       aria-labelledby="quote-form-heading"
     >
+      <input type="hidden" name="_subject" value="Pixel Motif — New Quote Request" />
+      <input type="hidden" name="_template" value="table" />
+
       <h3 id="quote-form-heading" className="font-display text-xl font-medium text-ink xl:text-2xl">
         {t.quoteForm.heading}
       </h3>
@@ -76,6 +56,8 @@ export default function QuoteForm() {
           />
         </div>
       </div>
+
+      <p className="mt-5 text-xs leading-relaxed text-ink-soft">{t.quoteForm.emailNote}</p>
 
       <button
         type="submit"

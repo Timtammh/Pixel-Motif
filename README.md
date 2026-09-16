@@ -21,8 +21,11 @@ npm run lint     # oxlint
 
 A few placeholders need to be swapped for real values:
 
-- `src/siteConfig.js` — `WHATSAPP_URL` (currently a placeholder `wa.me` link).
-- `src/components/QuoteForm.jsx` — the quote form currently only shows a client-side confirmation. Wire `handleSubmit` up to a real backend or email service (e.g. Formspree, EmailJS, or a mailto: link).
-- `src/components/Footer.jsx` — `SOCIALS` links are placeholders (`href="#"`).
+- `src/siteConfig.js` — WhatsApp is configured for +852 9130 5925.
+- `src/components/QuoteForm.jsx` — the form posts to FormSubmit and emails `motifphco@gmail.com`. reCAPTCHA remains enabled; FormSubmit handles verification and the confirmation page.
+  - Before launch, submit the form once from the website and complete verification. Check the recipient inbox (including Spam) for the FormSubmit activation email and click its confirmation link.
+  - After activation, submit another test enquiry and verify that the email arrives with name, business, email, and message. Submissions use the subject `Pixel Motif — New Quote Request`.
+  - Repeat the activation check when moving to a different website URL. No API key is required.
+- `src/components/Footer.jsx` — Instagram and LinkedIn entries are commented out until real profile URLs are available.
 - `public/og-image.png` — replace with a designed Open Graph image if desired.
 - `src/assets/ev-project.jpg` — case study screenshot of the EV project; replace if the live site changes.

@@ -167,7 +167,7 @@ export const content = {
       heading: 'Ready to Build a Better Website?',
       subhead: "Tell us what you need. We'll review your project and provide a clear quotation.",
       whatsapp: 'WhatsApp Us',
-      whatsappNote: 'WhatsApp link is a placeholder — replace with your business number.',
+      whatsappNote: '+852 9130 5925',
     },
     quoteForm: {
       heading: 'Request a Free Quote',
@@ -178,8 +178,7 @@ export const content = {
       messageLabel: 'What do you need?',
       messagePlaceholder: 'e.g. A new website for my restaurant with online booking',
       submit: 'Send Quote Request',
-      successTitle: 'Thanks — request received.',
-      successBody: "We'll review your project and get back to you with a clear quotation shortly.",
+      emailNote: 'Your enquiry is sent securely via FormSubmit. Complete the verification on the next page to submit.',
     },
     footer: {
       description: 'Web design and development for modern small businesses.',
@@ -343,7 +342,7 @@ export const content = {
       heading: '準備好為你的生意建立一個更好的網站？',
       subhead: '告訴我們你的需求，我們會先了解項目，再提供清晰報價。',
       whatsapp: 'WhatsApp 聯絡',
-      whatsappNote: 'WhatsApp 連結為暫定資料，正式上線前請換上真實電話號碼。',
+      whatsappNote: '+852 9130 5925',
     },
     quoteForm: {
       heading: '免費報價',
@@ -354,8 +353,7 @@ export const content = {
       messageLabel: '你需要什麼？',
       messagePlaceholder: '例如：想為餐廳製作一個可以網上訂座的網站',
       submit: '送出查詢',
-      successTitle: '多謝查詢，我們已收到。',
-      successBody: '我們會盡快了解你的項目，並提供清晰報價。',
+      emailNote: '查詢會經 FormSubmit 傳送，請在下一頁完成驗證以提交。',
     },
     footer: {
       description: '為現代中小企提供網站設計與開發服務。',
